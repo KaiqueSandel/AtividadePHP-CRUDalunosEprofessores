@@ -10,15 +10,33 @@ $r = new Php\Primeiroprojeto\Router($metodo, $caminho);
 
 #ROTAS
 
+
+# exercicio 1. Crie um algoritmo que receba um número digitado pelo usuário e verifique se esse valor é positivo, negativo ou igual a zero.
 $r->get('/exer1/formulario', function(){
     include("exer1.html");
 });
+$r->post('/exer1/resposta', function($params){
+    $numero = $_POST['numero'];
 
-$r->post('/exer1/resposta', function(){
-    $valor1 = $_POST['valor1'];
-    $valor2 = $_POST['valor2'];
-    $soma = $valor1 + $valor2;
-    return "A soma é: {$soma}";
+    if ($numero > 0) {
+        return "Valor Positivo";
+    } elseif ($numero < 0) {
+        return "Valor Negativo";
+    } else {
+        return "Igual a Zero";
+    }
+});
+
+// exercicio 2. Escreva um programa que leia 7 números diferentes, imprima o menor valor e imprima a posição do menor valor na sequência de entrada. 
+$r->get('/exer2/formulario', function(){
+    include("exer2.html");
+});
+$r->post('/exer2/resposta', function($params){
+    $numeros = $_POST['numeros'];
+    $numeros_array = explode(",", $numeros);
+    $menor_valor = min($numeros_array);
+    $posicao_menor = array_search($menor_valor, $numeros_array);
+    return "O menor valor é $menor_valor e está na posição $posicao_menor na sequência.";
 });
 
 #ROTAS
