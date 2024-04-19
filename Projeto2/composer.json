@@ -1,0 +1,14 @@
+{
+    "name": "andres/projeto2",
+    "autoload": {
+        "psr-4": {
+            "Andres\\Projeto2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andres Kaique"
+        }
+    ],
+    "require": {}
+}
