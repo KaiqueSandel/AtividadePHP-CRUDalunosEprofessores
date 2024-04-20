@@ -2,6 +2,9 @@
 
 use Andres\Controller\CategoriaController;
 use Andres\Controller\ProdutoController;
+use Andres\Controller\AlunoController;
+use Andres\Controller\Cliente3Controller;
+use Andres\Controller\CarroController;
 use Andres\Router;
 
 require __DIR__ . '/vendor/autoload.php';
@@ -20,12 +23,12 @@ $router->get(route: '/clientes', action:'Andres\Controller\Cliente3Controller::i
 $router->post(route: '/clientes/criar', action:'Andres\Controller\Cliente3Controller::criar');
 
 //Tabela 3
-$router->get(route: '/carro', action:'Andres\Controller\CarroController::index');
-$router->post(route: '/carro/criar', action:'Andres\Controller\CarroController::criar');
+$router->get(route: '/carros', action:'Andres\Controller\CarroController::index');
+$router->post(route: '/carros/criar', action:'Andres\Controller\CarroController::criar');
 
 //Tabela 4
-$router->get(route: '/aluno', action:'Andres\Controller\AlunoController::index');
-$router->post(route: '/aluno/criar', action:'Andres\Controller\AlunoController::criar');
+$router->get(route: '/alunos', action:'Andres\Controller\AlunoController::index');
+$router->post(route: '/alunos/criar', action:'Andres\Controller\AlunoController::criar');
 
 $result = $router->handler();
 if(!$result) {

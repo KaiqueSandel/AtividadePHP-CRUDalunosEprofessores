@@ -4,18 +4,17 @@ namespace Andres\Controller;
 
 use Andres\Model\DAO\AlunoDAO;
 use Andres\Model\Domain\Aluno;
-use Andres\Model\Domain\Categoria;
-
+use Andres\View\Alunos;
 class AlunoController
 {
     public static function index()
     {
         $alunoDAO = new AlunoDAO();
         $resultado = $alunoDAO->consultar();
-        require '../src/View/aluno/index.php';
+        require '../src/View/Alunos/index.php';
     }
     public function inserir($params) {
-        require_once("../src/Views/aluno/criar.php");
+        require_once("../src/Views/Alunos/criar.php");
     }
 
     public function criar($params) {

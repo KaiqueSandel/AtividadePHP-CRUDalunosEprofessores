@@ -2,7 +2,8 @@
 
 namespace Andres\Model\DAO;
 
-use Andres\Model\Domain\Categoria;
+use Andres\Model\Domain\aluno;
+use Andres\View\Alunos;
 
 class AlunoDAO
 {

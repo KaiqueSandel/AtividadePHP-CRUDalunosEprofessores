@@ -12,10 +12,10 @@ class Cliente3Controller
     {
         $cliente3DAO = new Cliente3DAO();
         $resultado = $cliente3DAO->consultar();
-        require '../src/View/clientes/index.php';
+        require '../src/View/Clientes/index.php';
     }
     public function inserir($params) {
-        require_once("../src/Views/clientes/criar.php");
+        require_once("../src/Views/Clientes/criar.php");
     }
 
     public function criar($params) {
