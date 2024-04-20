@@ -6,7 +6,7 @@
     }
 ?>
 
-<h1>Produtos</h1>
+<h1>Clientes</h1>
 <a href="/clientes/criar/" class="btn btn-primary">Novo cliente</a>
 <table class="table">
     <thead>

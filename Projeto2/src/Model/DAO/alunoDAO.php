@@ -4,7 +4,7 @@ namespace Andres\Model\DAO;
 
 use Andres\Model\Domain\Categoria;
 
-class CarroDAO
+class AlunoDAO
 {
     private DAO $dao;
     public function __construct()
@@ -21,7 +21,7 @@ class CarroDAO
         }
         return $attr;
     }
-    public function inserir(CarroDAO $carro)
+    public function inserir(AlunoDAO $carro)
     {
         try{
             $sql = "INSERT INTO aluno (nome, endereco, telefone) values (:nome,:endereco,:telefone)";

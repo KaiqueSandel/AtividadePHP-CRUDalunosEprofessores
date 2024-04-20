@@ -6,7 +6,7 @@
     }
 ?>
 
-<h1>Produtos</h1>
+<h1>Carro</h1>
 <a href="/carros/criar/" class="btn btn-primary">Novo carro</a>
 <table class="table">
     <thead>

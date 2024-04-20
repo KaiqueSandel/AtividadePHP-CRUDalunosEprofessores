@@ -13,19 +13,19 @@ $router->get('/ola-{nome}','Andres\Controller\HomeController::index');
 
 //Tabela 1
 $router->get(route: '/produtos', action:'Andres\Controller\ProdutosController::index');
-$router->get(route: '/produtos/criar', action:'Andres\Controller\ProdutosController::criar');
+$router->post(route: '/produtos/criar', action:'Andres\Controller\ProdutosController::criar');
 
 //Tabela 2
 $router->get(route: '/clientes', action:'Andres\Controller\Cliente3Controller::index');
-$router->get(route: '/clientes/criar', action:'Andres\Controller\Cliente3Controller::criar');
+$router->post(route: '/clientes/criar', action:'Andres\Controller\Cliente3Controller::criar');
 
 //Tabela 3
 $router->get(route: '/carro', action:'Andres\Controller\CarroController::index');
-$router->get(route: '/carro/criar', action:'Andres\Controller\CarroController::criar');
+$router->post(route: '/carro/criar', action:'Andres\Controller\CarroController::criar');
 
 //Tabela 4
 $router->get(route: '/aluno', action:'Andres\Controller\AlunoController::index');
-$router->get(route: '/aluno/criar', action:'Andres\Controller\AlunoController::criar');
+$router->post(route: '/aluno/criar', action:'Andres\Controller\AlunoController::criar');
 
 $result = $router->handler();
 if(!$result) {
