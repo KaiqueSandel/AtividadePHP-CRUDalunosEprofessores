@@ -6,14 +6,14 @@
     }
 ?>
 
-<h1>Produtos</h1>
-<a href="/produtos/criar/" class="btn btn-primary">Novo produto</a>
+<h1>Alunos</h1>
+<a href="/alunos/criar/" class="btn btn-primary">Novo Aluno</a>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Nome</th>
-            <th scope="col">Preço R$</th>
-            <th scope="col">Categoria</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Numero da Conta</th>
             <th scope="col">Ações</th>
         </tr>
     </thead>
@@ -23,12 +23,12 @@
         {
             ?>
             <tr>
-                <td><?= $c['id'] ?></td>
+                <td><?= $c['nome'] ?></td>
                 <td><?= $c['descricao'] ?></td>
                 <td>
-                    <a href="/produtos/alterar/<? $c['id']?>" class="btn btn-warning">Alterar</a>
-                    <a href="/produtos/excluir/<? $c['id']?>" class="btn btn-danger">Excluir</a>
-                    <a href="/produtos/visualizar/<? $c['id']?>" class="btn btn-info">Visualizar</a>        
+                    <a href="/clientes/alterar/<? $c['id']?>" class="btn btn-warning">Alterar</a>
+                    <a href="/clientes/excluir/<? $c['id']?>" class="btn btn-danger">Excluir</a>
+                    <a href="/clientes/visualizar/<? $c['id']?>" class="btn btn-info">Visualizar</a>        
                 </td>
             </tr>
         <?php

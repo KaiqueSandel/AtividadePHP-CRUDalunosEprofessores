@@ -21,7 +21,7 @@ class Cliente3DAO
         }
         return $attr;
     }
-    public function inserir(Cliente3 $cliente3)
+    public function inserir(Cliente3DAO $cliente3)
     {
         try{
             $sql = "insert into cliente3 (nome,endereco, numero_conta) values (:nome,:endereco,:numero_conta)";
@@ -46,7 +46,7 @@ class Cliente3DAO
     public function consultarPorId(int $id)
     {
         try {
-            $sql = "select * from cliente where id = :id";
+            $sql = "select * from cliente3 where id = :id";
             $p = this->dao->getConexao()->prepare($sql);
             $p->bindValue(":id", $id);
             $p->execute();

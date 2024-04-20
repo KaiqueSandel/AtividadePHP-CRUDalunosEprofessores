@@ -2,10 +2,9 @@
 
 namespace Andres\Controller;
 
-use Andres\DAO\Cliente3DAO;
-use Andres\DAO\CategoriaDAO;
-use Andres\Domain\Categoria;
-use Andres\Domain\Cliente3;
+use Andres\Model\DAO\Cliente3DAO; // Importe a classe Cliente3DAO aqui
+use Andres\Model\Domain\Categoria;
+use Andres\Model\Domain\Produto;
 
 class Cliente3Controller
 {
@@ -15,33 +14,18 @@ class Cliente3Controller
         $resultado = $cliente3DAO->consultar();
         require '../src/View/clientes/index.php';
     }
-    public static function criar()
-    {
-        $cliente3DAO = new Cliente3DAO();
-        $categorias = $cliente3DAO->consutlar();
-        require '../src/View/clientes/criar.php';
+    public function inserir($params) {
+        require_once("../src/Views/clientes/criar.php");
     }
-    public static function visualizar($params)
-    {
-        $id = $params[1];
+
+    public function criar($params) {
+        $clientes = new Cliente3(0, $_POST['nome'], $_POST['endereco'], $_POST['numero_conta']);
         $cliente3DAO = new Cliente3DAO();
-        $resultado = $resultadoDAO->consultarPorId($id);
-        $categoriaDAO = new Cliente3DAO();
-        $categoria = $categoriaDAO->consultarPorId($resultado['id']);
-        require '../src/View/clientes/visualizar.php';
-    }
-    public static function salvar()
-    {
-        $cliente3DAO = new Cliente3DAO();
-        $cliente = $cliente3DAO->consultarPorId($_POST['categoria']);
-        $produto = new Cliente3($_POST['nome'], $_POST['preco'], new Categoria($categoria['id'], $categoria['descricao']), id: 0);
-        $produtoDAO = new Cliente3DAO();
-        if ($produtoDAO->inserir($produto)){
-            $sucesso="Registro inserido com sucesso";
+        $resultado = $cliente3DAO->consultar();
+        if ($$cliente3DAO->inserir($clientes)) {
+            return "Inserido com sucesso!";
         } else {
-            $falha = "Erro ao inserir registro";
+            return "Erro ao inserir!";
         }
-        $resultado =$produtoDAO->consultar();
-        require '../src/View/produtos/index.php';
     }
 }
