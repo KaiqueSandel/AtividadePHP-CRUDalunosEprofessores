@@ -13,7 +13,7 @@
         <tr>
             <th scope="col">Nome</th>
             <th scope="col">Endereço</th>
-            <th scope="col">Numero da Conta</th>
+            <th scope="col">Telefone</th>
             <th scope="col">Ações</th>
         </tr>
     </thead>
@@ -24,7 +24,8 @@
             ?>
             <tr>
                 <td><?= $c['nome'] ?></td>
-                <td><?= $c['descricao'] ?></td>
+                <td><?= $c['endereco'] ?></td>
+                <td><?= $c['telefone'] ?></td>
                 <td>
                     <a href="/clientes/alterar/<? $c['id']?>" class="btn btn-warning">Alterar</a>
                     <a href="/clientes/excluir/<? $c['id']?>" class="btn btn-danger">Excluir</a>

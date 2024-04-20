@@ -24,7 +24,8 @@
             ?>
             <tr>
                 <td><?= $c['nome'] ?></td>
-                <td><?= $c['descricao'] ?></td>
+                <td><?= $c['endereco'] ?></td>
+                <td><?= $c['numero_conta'] ?></td>
                 <td>
                     <a href="/clientes/alterar/<? $c['id']?>" class="btn btn-warning">Alterar</a>
                     <a href="/clientes/excluir/<? $c['id']?>" class="btn btn-danger">Excluir</a>

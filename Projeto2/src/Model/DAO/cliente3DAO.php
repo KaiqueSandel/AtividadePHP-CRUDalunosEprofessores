@@ -24,7 +24,7 @@ class Cliente3DAO
     public function inserir(Cliente3DAO $cliente3)
     {
         try{
-            $sql = "insert into cliente3 (nome,endereco, numero_conta) values (:nome,:endereco,:numero_conta)";
+            $sql = "INSERT INTO cliente3 (nome,endereco, numero_conta) values (:nome,:endereco,:numero_conta)";
             $p = $this->dao->getConexao()->prepre($sql);
             $p->bindValue(":nome", $this->antiInjection($categoria->getNome()));
             $p->bindValue(":endereco", $this->antiInjection($categoria->getEndereco()));
@@ -37,7 +37,7 @@ class Cliente3DAO
     public function consultar()
     {
         try {
-            $sql = "select * from cliente3";
+            $sql = "SELECT * from cliente3";
             return $this->dao->getConexao()->query($sql);
         } catch (\Exception $e){
             return 0;
@@ -46,7 +46,7 @@ class Cliente3DAO
     public function consultarPorId(int $id)
     {
         try {
-            $sql = "select * from cliente3 where id = :id";
+            $sql = "SELECT * from cliente3 where id = :id";
             $p = this->dao->getConexao()->prepare($sql);
             $p->bindValue(":id", $id);
             $p->execute();

@@ -23,8 +23,9 @@
         {
             ?>
             <tr>
-                <td><?= $c['id'] ?></td>
-                <td><?= $c['descricao'] ?></td>
+                <td><?= $c['nome'] ?></td>
+                <td><?= $c['preco'] ?></td>
+                <td><?= $c['categoria'] ?></td>
                 <td>
                     <a href="/produtos/alterar/<? $c['id']?>" class="btn btn-warning">Alterar</a>
                     <a href="/produtos/excluir/<? $c['id']?>" class="btn btn-danger">Excluir</a>

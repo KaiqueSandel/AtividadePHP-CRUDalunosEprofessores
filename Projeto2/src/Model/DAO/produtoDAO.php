@@ -24,7 +24,7 @@ class ProdutoDAO
     public function inserir(Produto $produto)
     {
         try{
-            $sql = "insert into produto (nome,preco, id_categoria) values (:nome,:preco,:id_categoria)";
+            $sql = "INSERT INTO produto (nome,preco, id_categoria) values (:nome,:preco,:id_categoria)";
             $p = $this->dao->getConexao()->prepre($sql);
             $p->bindValue(":nome", $this->antiInjection($categoria->getNome()));
             $p->bindValue(":preco", $this->antiInjection($categoria->getPreco()));
@@ -37,7 +37,7 @@ class ProdutoDAO
     public function consultar()
     {
         try {
-            $sql = "select * from produto";
+            $sql = "SELECT * from produto";
             return $this->dao->getConexao()->query($sql);
         } catch (\Exception $e){
             return 0;
@@ -46,7 +46,7 @@ class ProdutoDAO
     public function consultarPorId(int $id)
     {
         try {
-            $sql = "select * from produto where id = :id";
+            $sql = "SELECT * from produto where id = :id";
             $p = this->dao->getConexao()->prepare($sql);
             $p->bindValue(":id", $id);
             $p->execute();

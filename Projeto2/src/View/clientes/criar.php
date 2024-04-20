@@ -9,7 +9,7 @@
         </div>
         <div class="col">
             <label for="endereco">Endereco do cliente: </label>
-            <input type="text" name="text" class="form-control" value="<?$resultado['endereco']?>"/>
+            <input type="text" name="endereco" class="form-control" value="<?$resultado['endereco']?>"/>
         </div>
         <div class="col">
             <label for="numero_conta">Numero da conta do cliente: </label>

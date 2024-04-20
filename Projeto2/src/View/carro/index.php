@@ -7,13 +7,13 @@
 ?>
 
 <h1>Produtos</h1>
-<a href="/clientes/criar/" class="btn btn-primary">Novo cliente</a>
+<a href="/carros/criar/" class="btn btn-primary">Novo carro</a>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Nome</th>
-            <th scope="col">Endereço</th>
-            <th scope="col">Numero da Conta</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
             <th scope="col">Ações</th>
         </tr>
     </thead>
@@ -24,7 +24,8 @@
             ?>
             <tr>
                 <td><?= $c['nome'] ?></td>
-                <td><?= $c['descricao'] ?></td>
+                <td><?= $c['marca'] ?></td>
+                <td><?= $c['modelo'] ?></td>
                 <td>
                     <a href="/clientes/alterar/<? $c['id']?>" class="btn btn-warning">Alterar</a>
                     <a href="/clientes/excluir/<? $c['id']?>" class="btn btn-danger">Excluir</a>

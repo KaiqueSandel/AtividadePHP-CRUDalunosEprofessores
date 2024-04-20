@@ -2,9 +2,9 @@
 
 namespace Andres\Controller;
 
-use Andres\Model\DAO\Cliente3DAO; // Importe a classe Cliente3DAO aqui
+use Andres\Model\DAO\Cliente3DAO; 
 use Andres\Model\Domain\Categoria;
-use Andres\Model\Domain\Produto;
+use Andres\Model\Domain\Cliente3;
 
 class Cliente3Controller
 {
@@ -22,7 +22,7 @@ class Cliente3Controller
         $clientes = new Cliente3(0, $_POST['nome'], $_POST['endereco'], $_POST['numero_conta']);
         $cliente3DAO = new Cliente3DAO();
         $resultado = $cliente3DAO->consultar();
-        if ($$cliente3DAO->inserir($clientes)) {
+        if ($cliente3DAO->inserir($clientes)) {
             return "Inserido com sucesso!";
         } else {
             return "Erro ao inserir!";
