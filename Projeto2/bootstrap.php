@@ -1,8 +1,8 @@
 <?php
 
-use Andres\Projeto2\Controller\CategoriaController;
-use Andres\Projeto2\Controller\ProdutoController;
-use Andres\Projeto2\Router;
+use Andres\Controller\CategoriaController;
+use Andres\Controller\ProdutoController;
+use Andres\Router;
 
 require __DIR__ . '/vendor/autoload.php';
 $method = $_SERVER['REQUEST_METHOD'];
@@ -34,7 +34,7 @@ if ($result instanceof Clouse){
     echo $result($router->getParams());
 }
 elseif (is_string($result)){
-    $result = explode('@',$result);
+    $result = explode('::',$result);
     $controller = new $result[0];
     $action = $result[1];
     echo $controller->$action($router->getParams());

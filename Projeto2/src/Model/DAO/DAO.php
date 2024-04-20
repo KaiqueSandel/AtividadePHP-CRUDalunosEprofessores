@@ -9,7 +9,7 @@ class DAO
     private $conexao;
     public function __construct()
     {
-        $this->conexao = new PDO("mysql:host=localhost; dbname=projeto_php, ", "root", "");
+        $this->conexao = new PDO("mysql:host=localhost; dbname=projeto_php", "root", "");
     }
     /**
      * @return mixed

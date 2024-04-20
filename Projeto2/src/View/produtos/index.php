@@ -1,5 +1,5 @@
 <?php require '../src/View/cabecalho.php';
-    if (issert($sucesso)){
+    if (isset($sucesso)){
         echo "<p>".$sucesso."</p>";
     } elseif (isset($falha)){
         echo "<p>".$falha."</p>";

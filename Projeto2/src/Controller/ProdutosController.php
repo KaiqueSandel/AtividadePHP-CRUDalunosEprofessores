@@ -2,10 +2,10 @@
 
 namespace Andres\Controller;
 
-use Andres\DAO\ProdutoDAO;
-use Andres\DAO\CategoriaDAO;
-use Andres\Domain\Categoria;
-use Andres\Domain\Produto;
+use Andres\Model\DAO\ProdutoDAO;
+use Andres\Model\DAO\CategoriaDAO;
+use Andres\Model\Domain\Categoria;
+use Andres\Model\Domain\Produto;
 
 class ProdutosController
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Andres\Projeto2;
+namespace Andres;
 
 class Router
 {
