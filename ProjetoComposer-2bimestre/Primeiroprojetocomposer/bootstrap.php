@@ -142,6 +142,29 @@ $r->post('/carro/deletar',
     'Php\Primeiroprojeto\Controllers\CarroController@deletar');
 
 //Rota empresa
+$r->get('/empresa/inserir',
+    'Php\Primeiroprojeto\Controllers\EmpresaController@inserir');
+
+$r->post('/empresa/novo',
+    'Php\Primeiroprojeto\Controllers\EmpresaController@novo');
+
+$r->get('/empresa', 
+    'Php\Primeiroprojeto\Controllers\EmpresaController@index');
+
+$r->get('/empresa/{acao}/{status}', 
+    'Php\Primeiroprojeto\Controllers\EmpresaController@index');
+
+$r->get('/empresa/alterar/id/{id}',
+    'Php\Primeiroprojeto\Controllers\EmpresaController@alterar');
+
+$r->get('/empresa/excluir/id/{id}',
+    'Php\Primeiroprojeto\Controllers\EmpresaController@excluir');
+
+$r->post('/empresa/editar',
+    'Php\Primeiroprojeto\Controllers\EmpresaController@editar');
+
+$r->post('/empresa/deletar',
+    'Php\Primeiroprojeto\Controllers\EmpresaController@deletar'); 
 
 
 $resultado = $r->handler();
