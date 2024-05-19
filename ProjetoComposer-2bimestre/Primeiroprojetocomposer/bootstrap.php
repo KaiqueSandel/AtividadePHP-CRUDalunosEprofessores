@@ -65,9 +65,8 @@ $r->post('/categoria/editar',
     
 $r->post('/categoria/deletar',
     'Php\Primeiroprojeto\Controllers\CategoriaController@deletar');
-#ROTAS
 
-// Rotas produto
+//Rotas produto
 $r->get('/produto/inserir',
     'Php\Primeiroprojeto\Controllers\ProdutoController@inserir');
 
@@ -91,6 +90,60 @@ $r->post('/produto/editar',
 
 $r->post('/produto/deletar',
     'Php\Primeiroprojeto\Controllers\ProdutoController@deletar'); 
+
+//Rotas aluno
+$r->get('/aluno/inserir',
+    'Php\Primeiroprojeto\Controllers\AlunoController@inserir');
+
+$r->post('/aluno/novo',
+    'Php\Primeiroprojeto\Controllers\AlunoController@novo');
+
+$r->get('/aluno', 
+    'Php\Primeiroprojeto\Controllers\AlunoController@index');
+
+$r->get('/aluno/{acao}/{status}', 
+    'Php\Primeiroprojeto\Controllers\AlunoController@index');
+
+$r->get('/aluno/alterar/id/{id}',
+    'Php\Primeiroprojeto\Controllers\AlunoController@alterar');
+
+$r->get('/aluno/excluir/id/{id}',
+    'Php\Primeiroprojeto\Controllers\AlunoController@excluir');
+
+$r->post('/aluno/editar',
+    'Php\Primeiroprojeto\Controllers\AlunoController@editar');
+
+$r->post('/aluno/deletar',
+    'Php\Primeiroprojeto\Controllers\AlunoController@deletar');
+
+//Rota carro
+$r->get('/carro/inserir',
+    'Php\Primeiroprojeto\Controllers\CarroController@inserir');
+
+$r->post('/carro/novo',
+    'Php\Primeiroprojeto\Controllers\CarroController@novo');
+
+$r->get('/carro', 
+    'Php\Primeiroprojeto\Controllers\CarroController@index');
+
+$r->get('/carro/{acao}/{status}', 
+    'Php\Primeiroprojeto\Controllers\CarroController@index');
+
+$r->get('/carro/alterar/id/{id}',
+    'Php\Primeiroprojeto\Controllers\CarroController@alterar');
+
+$r->get('/carro/excluir/id/{id}',
+    'Php\Primeiroprojeto\Controllers\CarroController@excluir');
+
+$r->post('/carro/editar',
+    'Php\Primeiroprojeto\Controllers\CarroController@editar');
+
+$r->post('/carro/deletar',
+    'Php\Primeiroprojeto\Controllers\CarroController@deletar');
+
+//Rota empresa
+
+
 $resultado = $r->handler();
 
 if(!$resultado){
