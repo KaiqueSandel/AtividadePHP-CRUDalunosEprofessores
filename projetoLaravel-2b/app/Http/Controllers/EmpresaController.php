@@ -13,7 +13,7 @@ class EmpresaController extends Controller
     public function index()
     {
         //
-        $empresa = empresa::all();
+        $empresa = Empresa::all();
         return view("empresa.index", compact('empresa'));
     }
 
@@ -34,13 +34,13 @@ class EmpresaController extends Controller
     {
         //salvar os dados na tabela clientes
         //método POST
-        Cliente::create([
+        Empresa::create([
             'nome_fantasia' => $request->input('nome_fantasia'),
             'cnpj' => $request->input('cnpj'),
             'receita' => $request->input('receita')
 
         ]);
-        return "Registro inserido!";
+        return "Registro inserido com sucesso!";
     }
 
     /**
@@ -71,7 +71,7 @@ class EmpresaController extends Controller
     {
         //salvar as alterações em registro
         //metodo PUT
-        $empresa = empresa::findOrFail($id);
+        $empresa = Empresa::findOrFail($id);
         $empresa->update([
             'nome_fantasia' => $request->input('nome_fantasia'),
             'cnpj' => $request->input('cnpj'),
@@ -97,6 +97,6 @@ class EmpresaController extends Controller
         //metodo GET
         //mostrar formulario com os dados antes de excluir
         $empresa = Empresa::findOrFail($id);
-        return view ("empresa.delete", compact('empresaa'));
+        return view ("empresa.delete", compact('empresa'));
     }
 }
