@@ -1,21 +1,21 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
+use App\Http\Controllers\MensagemController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/bem-vindo',function(){
-    return "Seja bem vindo!";
-});
+Route::get("/mensagem/{mensagem}", [MensagemController::class, 'mostrarMensagem']);
 
-Route::get('/exer1',function(){
-    return view('/exer1');
-});
+Route::resources(
+[
+    'clientes' => ClienteController::class,
+    #produtos => ProdutosController::class
+]
+);
 
-Route::post('/exer1resp',function(Request $request){
-    $valor = $request->input('valor1');
-    return $valor;
-});
+Route::get('/clientes/delete/{id}' , [ClienteController::class, 'delete']);
